@@ -1,0 +1,6 @@
+{
+  "name": "HomeLens Realty — Prime Home Loan Advisory & Bank Comparison",
+  "description": "Compare 55+ banking partners, calculate home loan EMI, check eligibility, and get doorstep mortgage advisory with zero brokerage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,351 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Pure White Canvas with Crisp Black Framing */
+    --bg-canvas: #ffffff;
+    --bg-surface-1: #ffffff;
+    --bg-surface-2: #f8f9fc;
+    --bg-surface-3: #f1f3f8;
+    --bg-surface-hover: #eef2f6;
+
+    /* Hairline Architectural Black Borders */
+    --border-hairline: #000000;
+    --border-hairline-light: #222222;
+    --border-gold-subtle: rgba(197, 160, 89, 0.4);
+    --border-gold-strong: rgba(180, 136, 53, 0.85);
+
+    /* Rich Gold Franchise Brand Palette */
+    --gold-highlight: #fae49d;
+    --gold-main: #b48835;
+    --gold-medium: #966f22;
+    --gold-deep: #684812;
+    --gold-shadow: #3b2808;
+
+    /* Rose Gold Accent Palette */
+    --rose-gold-main: #d89080;
+    --rose-gold-light: #f2cfc7;
+    --rose-gold-dark: #a85848;
+
+    /* High-Legibility Crisp Black Neutral Text */
+    --text-primary: #0a0a0c;
+    --text-secondary: #27272a;
+    --text-muted: #52525b;
+    --text-dark-gold: #966f22;
+    --text-antique-gold: #7a5518;
+
+    /* Typography */
+    --font-brand: 'Montserrat', -apple-system, system-ui, sans-serif;
+    --font-heading: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+    --font-subheading: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-editorial: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: #faf9f6;
+    color: #0a0a0c;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #fdfcf9;
+    /* High quality subtle textured paper background (natural organic grain + warm ivory weave) */
+    background-image: 
+      radial-gradient(#111827 0.45px, transparent 0.45px),
+      radial-gradient(#b48835 0.35px, #fdfcf9 0.35px);
+    background-size: 24px 24px, 12px 12px;
+    background-position: 0 0, 6px 6px;
+    background-attachment: fixed;
+    color: #18181b;
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #000000;
+    letter-spacing: -0.015em;
+  }
+
+  /* Editorial Subheadings with warm luxury serif & distinctive style */
+  .subheading-editorial {
+    font-family: var(--font-subheading);
+    letter-spacing: -0.01em;
+  }
+
+  .subheading-accent {
+    font-family: var(--font-subheading);
+    font-style: italic;
+    color: #926019;
+  }
+
+  /* Paper texture overlay utilities */
+  .bg-textured-paper {
+    background-color: #fefdfa;
+    background-image: 
+      radial-gradient(#1f2937 0.4px, transparent 0.4px),
+      radial-gradient(#ca8a04 0.3px, #fefdfa 0.3px);
+    background-size: 20px 20px, 10px 10px;
+    background-position: 0 0, 5px 5px;
+  }
+
+  .bg-textured-white {
+    background-color: #ffffff;
+    background-image: 
+      radial-gradient(#000000 0.35px, transparent 0.35px),
+      linear-gradient(to right, rgba(0,0,0,0.012) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.012) 1px, transparent 1px);
+    background-size: 16px 16px, 32px 32px, 32px 32px;
+  }
+
+  input, select, textarea, button {
+    font-family: inherit;
+  }
+}
+
+/* =========================================================
+   BLUR MOSS EFFECT & RICH GOLD / ROSE GOLD AESTHETICS
+   ========================================================= */
+
+/* Premium atmospheric blur-moss backdrop */
+.bg-blur-moss {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(28, 42, 34, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(216, 144, 128, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
+    #0c0d10;
+}
+
+/* Exact Metallic Dark Gold Text (Matching Brand Image) */
+.text-gold-metallic {
+  background: linear-gradient(180deg, #fae49d 0%, #d4ac57 35%, #b48835 70%, #7a5518 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
+}
+
+/* Rose Gold Text Highlight */
+.text-rose-gold {
+  background: linear-gradient(180deg, #f7d5ce 0%, #d89080 50%, #ad5e4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Solid Dark Gold for Headings, Highlights & Accents */
+.text-dark-gold {
+  color: #c5a059;
+}
+
+.text-antique-gold {
+  color: #a67c2e;
+}
+
+/* Rose Gold Badge & Accents */
+.badge-rose-gold {
+  background-color: rgba(216, 144, 128, 0.12);
+  border: 1px solid rgba(216, 144, 128, 0.35);
+  color: #f2cfc7;
+}
+
+/* Background Gradients */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #fae49d 0%, #c5a059 40%, #a67c2e 100%);
+}
+
+.gold-gradient-deep {
+  background: linear-gradient(180deg, #3d3422 0%, #1a1c20 100%);
+}
+
+/* Clean Architectural Cards with Crisp Black Framing */
+.grey-card {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.08);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grey-card:hover {
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* Luxury Card */
+.luxury-card {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.08);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* Pastel Light Pink & Light Blue Cards with Crisp Black Framing */
+.card-light-pink {
+  background-color: #fff0f3;
+  border: 2px solid #000000;
+  border-radius: 1.25rem;
+  color: #0a0a0c;
+  box-shadow: 0 10px 25px rgba(244, 114, 182, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-light-blue {
+  background-color: #eff6ff;
+  border: 2px solid #000000;
+  border-radius: 1.25rem;
+  color: #0a0a0c;
+  box-shadow: 0 10px 25px rgba(96, 165, 250, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.container-light-pink {
+  background-color: #fff5f7;
+  border: 2px solid #000000;
+}
+
+.container-light-blue {
+  background-color: #f0f7ff;
+  border: 2px solid #000000;
+}
+
+
+/* High-End Dark Gold Button */
+.btn-gold {
+  background: linear-gradient(180deg, #d8b25e 0%, #b48835 60%, #8c6422 100%);
+  color: #0c0d10;
+  font-weight: 700;
+  border-radius: 0.65rem;
+  border: 1px solid #fae49d;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(180deg, #fae49d 0%, #c5a059 60%, #9e7329 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55), 0 0 14px rgba(197, 160, 89, 0.3);
+}
+
+/* Secondary Charcoal Button */
+.btn-secondary {
+  background-color: #171920;
+  color: #e2e4ea;
+  font-weight: 600;
+  border: 1px solid #2d303c;
+  border-radius: 0.65rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #20232c;
+  border-color: #c5a059;
+  color: #fae49d;
+}
+
+/* Rose Gold Accent Button */
+.btn-rosegold {
+  background: linear-gradient(180deg, #f2cfc7 0%, #d89080 60%, #a85848 100%);
+  color: #0c0d10;
+  font-weight: 700;
+  border-radius: 0.65rem;
+  border: 1px solid #f2cfc7;
+  transition: all 0.2s ease;
+}
+
+.btn-rosegold:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #f2cfc7 60%, #c27a6c 100%);
+  transform: translateY(-1px);
+}
+
+/* Solid Architectural Navbar */
+.solid-nav {
+  background-color: #0c0d10;
+  border-bottom: 1px solid #21232b;
+}
+
+.solid-nav-scrolled {
+  background-color: #0c0d10;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Legacy alias backward compatibility */
+.glass-nav {
+  background-color: #0c0d10;
+  border-bottom: 1px solid #21232b;
+}
+
+.glass-nav-scrolled {
+  background-color: #0c0d10;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(180deg, #fae49d 0%, #d4ac57 35%, #b48835 70%, #7a5518 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark Grey Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0d10;
+}
+::-webkit-scrollbar-thumb {
+  background: #252830;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+/* Floating / Levitation Keyframes for Hover Screens and Cards */
+@keyframes floatLevitate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.4deg);
+  }
+}
+
+.animate-float-levitate {
+  animation: floatLevitate 4s ease-in-out infinite;
+}
+
+@keyframes pulseHalo {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-halo {
+  animation: pulseHalo 3.5s ease-in-out infinite;
+}
